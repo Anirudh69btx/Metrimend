@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrimend - Premium Fitness & Health Platform</title>
+    <meta name="description" content="Professional fitness calculators, health tools, and wellness tracking platform.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js for Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- ============================================
+         BACKGROUND EFFECTS CONTAINER
+         ============================================ -->
+    <div class="background-container">
+        <div class="bg-image"></div>
+        <div class="bg-overlay"></div>
+        <div class="grid-pattern"></div>
+        <div class="glass-orb orb-1"></div>
+        <div class="glass-orb orb-2"></div>
+        <div id="sparkles-container"></div>
+    </div>
+
+    <!-- ============================================
+         NAVIGATION BAR
+         ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="https://st2.depositphotos.com/46079520/47723/v/450/depositphotos_477230416-stock-illustration-letter-logo-design-black-background.jpg" alt="Logo" class="logo-img">
+                <span class="logo-text">METRIMEND</span>
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#tools" class="nav-link active">Tools</a>
+                <a href="#charts" class="nav-link">Progress</a>
+                <a href="#tips" class="nav-link">Health Tips</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                Premium Fitness Platform
+            </div>
+            
+            <h1 class="hero-title">
+                Master Your Health
+                <span class="hero-title-accent">With Precision Tools</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Access 40+ professional fitness calculators, health assessment tools, and progress trackers designed for athletes and health-conscious individuals.
+            </p>
+            
+            <div class="hero-actions">
+                <a href="#tools" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                    Explore Tools
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">40+</span>
+                    <span class="stat-label">Professional Tools</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Free To Use</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Access Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TOOLS SECTION (Categories)
+         ============================================ -->
+    <section class="section" id="tools">
+        <div class="section-header">
+            <span class="section-label">Health & Fitness Tools</span>
+            <h2 class="section-title">Professional Calculators</h2>
+        </div>
+        
+        <div class="categories-grid">
+            <!-- Fitness -->
+            <div class="tool-box" data-category="fitness" onclick="openCategory('fitness')">
+                <div class="tool-box-glow"></div>
+                <div class="tool-box-inner">
+                    <div class="tool-icon" style="background: linear-gradient(135deg, #00d4aa 0%, #00a896 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5h11M6.5 17.5h11M2 12h20M4 6v12M20 6v12"></path></svg>
+                    </div>
+                    <h3 class="tool-title">Fitness Calculators</h3>
+                    <p class="tool-count">13 tools available</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">BMI</span>
+                        <span class="tool-tag">BMR</span>
+                        <span class="tool-tag">TDEE</span>
+                    </div>
+                    <div class="tool-arrow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cardio -->
+            <div class="tool-box" data-category="cardio" onclick="openCategory('cardio')">
+                <div class="tool-box-glow"></div>
+                <div class="tool-box-inner">
+                    <div class="tool-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    </div>
+                    <h3 class="tool-title">Cardio Tools</h3>
+                    <p class="tool-count">6 tools available</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Pace</span>
+                        <span class="tool-tag">Marathon</span>
+                        <span class="tool-tag">HIIT</span>
+                    </div>
+                    <div class="tool-arrow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strength -->
+            <div class="tool-box" data-category="strength" onclick="openCategory('strength')">
+                <div class="tool-box-glow"></div>
+                <div class="tool-box-inner">
+                    <div class="tool-icon" style="background: linear-gradient(135deg, #f0b866 0%, #d4a04a 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5h11M6.5 17.5h11M2 12h20M4 6v12M20 6v12"></path></svg>
+                    </div>
+                    <h3 class="tool-title">Strength Tools</h3>
+                    <p class="tool-count">5 tools available</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">1RM</span>
+                        <span class="tool-tag">Powerlifting</span>
+                    </div>
+                    <div class="tool-arrow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nutrition -->
+            <div class="tool-box" data-category="nutrition" onclick="openCategory('nutrition')">
+                <div class="tool-box-glow"></div>
+                <div class="tool-box-inner">
+                    <div class="tool-icon" style="background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+                    </div>
+                    <h3 class="tool-title">Nutrition Tools</h3>
+                    <p class="tool-count">7 tools available</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Macro</span>
+                        <span class="tool-tag">Protein</span>
+                        <span class="tool-tag">Water</span>
+                    </div>
+                    <div class="tool-arrow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health -->
+            <div class="tool-box" data-category="health" onclick="openCategory('health')">
+                <div class="tool-box-glow"></div>
+                <div class="tool-box-inner">
+                    <div class="tool-icon" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </div>
+                    <h3 class="tool-title">Health Tools</h3>
+                    <p class="tool-count">7 tools available</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Blood Pressure</span>
+                        <span class="tool-tag">Sleep</span>
+                    </div>
+                    <div class="tool-arrow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CHARTS SECTION
+         ============================================ -->
+    <section class="section charts-section" id="charts">
+        <div class="section-header">
+            <span class="section-label">Visual Analytics</span>
+            <h2 class="section-title">Track Your Progress</h2>
+        </div>
+        
+        <div class="charts-grid">
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <h3 class="chart-card-title">Weight Progress</h3>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="weightChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <h3 class="chart-card-title">Macro Distribution</h3>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="macroChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <h3 class="chart-card-title">Body Composition</h3>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="bodyCompChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         MODAL / CALCULATOR POPUP
+         ============================================ -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Select Tool</h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- List of Tools -->
+                <div class="tools-list" id="toolsList"></div>
+                
+                <!-- Calculator Form (Hidden by default) -->
+                <div class="calculator-form" id="calculatorForm">
+                    <button class="form-back" onclick="backToTools()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        Back to Tools
+                    </button>
+                    <div id="formContent"></div>
+                    <div class="results-panel" id="resultsPanel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer" id="about">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-text">METRIMEND</span>
+                </div>
+                <p class="footer-desc">Professional fitness tools for a healthier you. Track, calculate, and optimize your health journey.</p>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#charts">Progress</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">2025 Metrimend. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Link -->
+    <script src="script.js"></script>
+</body>
+</html>
